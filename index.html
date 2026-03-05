@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Jireh Paul Ruiz | Freelancer</title>
+<title>Jireh Paul Ruiz | Automation Freelancer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -16,34 +16,42 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 scroll-behavior:smooth;
+font-family:Poppins;
 }
 
-
-  
 body{
-font-family:'Poppins',sans-serif;
-background:#0f172a;
+background:#020617;
 color:white;
-line-height:1.6;
 }
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:20px;
+/* GALAXY BACKGROUND */
+
+#galaxy{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+background:black;
 }
+
+/* NAVBAR */
 
 header{
 position:fixed;
 width:100%;
-background:rgba(15,23,42,0.7);
+background:rgba(0,0,0,0.5);
 backdrop-filter:blur(10px);
 }
 
 nav{
+max-width:1100px;
+margin:auto;
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:15px;
 }
 
 nav ul{
@@ -56,10 +64,11 @@ margin-left:25px;
 }
 
 nav a{
-text-decoration:none;
 color:white;
-font-weight:500;
+text-decoration:none;
 }
+
+/* HERO */
 
 .hero{
 height:100vh;
@@ -67,38 +76,50 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-background:linear-gradient(135deg,#4f46e5,#06b6d4);
+flex-direction:column;
+padding:20px;
+}
+
+.profile{
+width:140px;
+border-radius:50%;
+border:4px solid white;
+margin-bottom:20px;
 }
 
 .hero h1{
-font-size:48px;
-margin-bottom:10px;
+font-size:42px;
 }
 
 .hero p{
-font-size:18px;
+opacity:.8;
+margin-top:10px;
 }
 
 .btn{
 display:inline-block;
 margin-top:20px;
-padding:14px 30px;
-background:white;
-color:#111;
+padding:12px 25px;
+background:#6366f1;
 border-radius:8px;
-font-weight:600;
 text-decoration:none;
+color:white;
 }
 
+/* SECTION */
+
 .section{
-padding:100px 0;
+padding:100px 20px;
+max-width:1100px;
+margin:auto;
 }
 
 .section h2{
 text-align:center;
 margin-bottom:50px;
-font-size:32px;
 }
+
+/* GRID */
 
 .grid{
 display:grid;
@@ -106,51 +127,37 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:30px;
 }
 
+/* CARD */
+
 .card{
-background:rgba(255,255,255,0.08);
-padding:30px;
+background:rgba(255,255,255,0.05);
+padding:25px;
 border-radius:15px;
 backdrop-filter:blur(10px);
-transition:0.3s;
 }
 
-.card:hover{
-transform:translateY(-10px);
-}
+/* PROJECT IMAGES */
 
-.skills{
-max-width:600px;
-margin:auto;
-}
-
-.skill{
-margin-bottom:20px;
-}
-
-.bar{
-height:8px;
-background:#334155;
-border-radius:20px;
-overflow:hidden;
-}
-
-.bar span{
-display:block;
-height:100%;
-background:#22c55e;
-}
-
-.project{
-background:rgba(255,255,255,0.08);
-padding:20px;
+.project img{
+width:100%;
 border-radius:10px;
 }
 
+/* TESTIMONIAL */
+
+.testimonial{
+font-style:italic;
+}
+
+/* FOOTER */
+
 footer{
 text-align:center;
-padding:30px;
+padding:40px;
 background:#020617;
 }
+
+/* WHATSAPP BUTTON */
 
 .whatsapp{
 position:fixed;
@@ -158,94 +165,81 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:15px 18px;
+padding:15px;
 border-radius:50%;
-font-size:20px;
 text-decoration:none;
 }
 
+/* LIGHT MODE */
+
+.light{
+background:white;
+color:black;
+}
+
 </style>
+
 </head>
 
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-
-<div id="particles-js"></div>
-
-<style>
-#particles-js{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-z-index:-1;
-}
-</style>
-
-<script>
-particlesJS("particles-js", {
-  particles: {
-    number: { value: 80 },
-    size: { value: 3 },
-    move: { speed: 1 },
-    line_linked: { enable: true }
-  }
-});
-</script>
-  
 <body>
 
+<canvas id="galaxy"></canvas>
+
 <header>
-<div class="container">
+
 <nav>
 
-<h2>JR</h2>
+<h3>JR</h3>
 
 <ul>
+
 <li><a href="#about">About</a></li>
 <li><a href="#services">Services</a></li>
-<li><a href="#skills">Skills</a></li>
 <li><a href="#projects">Projects</a></li>
+<li><a href="#testimonials">Testimonials</a></li>
 <li><a href="#contact">Contact</a></li>
+
 </ul>
 
+<button onclick="toggleMode()">🌙</button>
+
 </nav>
-</div>
+
 </header>
 
+<!-- HERO -->
 
 <section class="hero">
 
-<div>
-<h1>Jireh Paul Ruiz</h1>
-<p>Freelancer • Excel Automation • Data Analysis</p>
+<img src="images/profile.jpg" class="profile">
 
-<a class="btn" href="#contact">Hire Me</a>
-</div>
+<h1>Jireh Paul Ruiz</h1>
+
+<p>Excel Automation • Data Analysis • Workflow Optimization</p>
+
+<a href="resume.pdf" class="btn">Download Resume</a>
 
 </section>
 
+<!-- ABOUT -->
 
 <section class="section" id="about">
 
-<div class="container">
-
 <h2>About Me</h2>
 
-<p style="text-align:center;max-width:700px;margin:auto;">
-Technical professional specializing in Excel VBA automation, data analysis,
-and workflow optimization. I help businesses reduce manual work and
-improve operational efficiency.
-</p>
+<p style="text-align:center;max-width:700px;margin:auto">
 
-</div>
+Automation-focused technical professional with engineering and operations experience.
+I build Excel automation tools, reporting systems, and dashboards that help businesses
+reduce manual work and improve productivity.
+
+</p>
 
 </section>
 
+<!-- SERVICES -->
 
 <section class="section" id="services">
-
-<div class="container">
 
 <h2>Services</h2>
 
@@ -253,168 +247,157 @@ improve operational efficiency.
 
 <div class="card">
 <h3>Excel Automation</h3>
-<p>Custom VBA tools to automate reporting and workflows.</p>
+<p>Custom VBA automation for reports and workflows.</p>
 </div>
 
 <div class="card">
-<h3>Data Analysis</h3>
-<p>Transform raw data into useful dashboards and reports.</p>
+<h3>Data Dashboards</h3>
+<p>Interactive Excel dashboards and KPI reporting.</p>
 </div>
 
 <div class="card">
-<h3>Print Layout Design</h3>
-<p>Professional sticker, signage, and tarpaulin layouts.</p>
-</div>
-
+<h3>Workflow Optimization</h3>
+<p>Tools that reduce repetitive manual tasks.</p>
 </div>
 
 </div>
 
 </section>
 
-
-<section class="section" id="skills">
-
-<div class="container">
-
-<h2>Skills</h2>
-
-<div class="skills">
-
-<div class="skill">
-<p>Excel VBA</p>
-<div class="bar"><span style="width:90%"></span></div>
-</div>
-
-<div class="skill">
-<p>Data Analysis</p>
-<div class="bar"><span style="width:85%"></span></div>
-</div>
-
-<div class="skill">
-<p>Printing Design</p>
-<div class="bar"><span style="width:80%"></span></div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
+<!-- PROJECTS -->
 
 <section class="section" id="projects">
-
-<div class="container">
 
 <h2>Projects</h2>
 
 <div class="grid">
 
-<div class="project">
-<h3>Automated Production Report</h3>
-<p>Excel VBA tool generating automatic daily reports.</p>
-</div>
+<div class="card project">
 
-<div class="project">
-<h3>Sticker Printing Layout</h3>
-<p>Optimized workflow for printing operations.</p>
-</div>
+<img src="images/project1.jpg">
 
-<div class="project">
-<h3>YouTube Shorts</h3>
-<p>Creator of Tiny Tales & Smiles channel.</p>
-</div>
+<h3>Production Report Automation</h3>
+
+<p>Excel VBA system generating automated daily reports.</p>
 
 </div>
 
-</div>
+<div class="card project">
 
-</section>
+<img src="images/project2.jpg">
 
+<h3>Operations Dashboard</h3>
 
-<section class="section" id="contact">
+<p>Excel dashboard tracking operational performance.</p>
 
-<div class="container">
-
-<h2>Contact</h2>
-
-<p style="text-align:center">
-Email: your@email.com
-</p>
-
-</div>
-
-</section>
-
-<section class="section" id="portfolio">
-
-<h2>Project Gallery</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="images/project1.jpg" width="100%">
-<p>Excel Automation Dashboard</p>
-</div>
-
-<div class="card">
-<img src="images/project2.jpg" width="100%">
-<p>Production Data Reporting Tool</p>
-</div>
-
-<div class="card">
-<img src="images/project3.jpg" width="100%">
-<p>Sticker Printing Layout System</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="section">
+<!-- TESTIMONIALS -->
+
+<section class="section" id="testimonials">
 
 <h2>Client Feedback</h2>
 
 <div class="grid">
 
-<div class="card">
-<p>"Jireh automated our reporting system and saved hours of manual work."</p>
-<strong>Manufacturing Manager</strong>
+<div class="card testimonial">
+
+"Automated our reporting system and saved hours every week."
+
 </div>
 
-<div class="card">
-<p>"Great Excel automation and quick delivery."</p>
-<strong>Business Owner</strong>
+<div class="card testimonial">
+
+"Very reliable Excel automation work."
+
 </div>
 
 </div>
 
 </section>
 
-  <a class="btn" href="resume.pdf" download>Download Resume</a>
-  <button onclick="toggleMode()">🌙</button>
-  <script>
-function toggleMode(){
-document.body.classList.toggle("light");
-}
-</script>
+<!-- CONTACT -->
 
-<style>
-.light{
-background:#f5f5f5;
-color:#111;
-}
-</style>
-  
+<section class="section" id="contact">
+
+<h2>Contact</h2>
+
+<p style="text-align:center">
+
+Email: Jirehruiz.ph@gmail.com
+
+</p>
+
+</section>
+
 <footer>
 
 <p>© 2026 Jireh Paul Ruiz</p>
 
 </footer>
 
+<a class="whatsapp" href="https://wa.me/971529285299">💬</a>
 
-<a class="whatsapp" href="https://wa.me/">💬</a>
+<script>
+
+/* LIGHT MODE */
+
+function toggleMode(){
+document.body.classList.toggle("light")
+}
+
+/* GALAXY ANIMATION */
+
+const canvas=document.getElementById("galaxy")
+const ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let stars=[]
+
+for(let i=0;i<200;i++){
+
+stars.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speed:Math.random()*0.5
+})
+
+}
+
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+ctx.fillStyle="white"
+
+stars.forEach(star=>{
+
+ctx.beginPath()
+ctx.arc(star.x,star.y,star.size,0,Math.PI*2)
+ctx.fill()
+
+star.y+=star.speed
+
+if(star.y>canvas.height){
+star.y=0
+}
+
+})
+
+requestAnimationFrame(draw)
+
+}
+
+draw()
+
+</script>
 
 </body>
 </html>
