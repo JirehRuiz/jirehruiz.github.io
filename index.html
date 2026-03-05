@@ -1,28 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Jireh Paul Ruiz | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jireh Paul Ruiz | Freelancer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-font-family: Arial;
-margin:40px;
-background:#f4f4f4;
+font-family:'Poppins',sans-serif;
+background:#f5f7fb;
+color:#333;
+line-height:1.6;
 }
 
 .container{
-max-width:800px;
+max-width:1100px;
 margin:auto;
-background:white;
-padding:30px;
-border-radius:10px;
+padding:20px;
 }
 
-h1{
+header{
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav h2{
+font-weight:600;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:20px;
+}
+
+nav a{
+text-decoration:none;
 color:#333;
+font-weight:500;
+}
+
+.hero{
+padding:80px 0;
+text-align:center;
+}
+
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+color:#666;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:#4f46e5;
+color:white;
+border-radius:6px;
+text-decoration:none;
 }
 
 .section{
-margin-top:30px;
+padding:60px 0;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.projects img{
+width:100%;
+border-radius:8px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#111;
+color:white;
 }
 
 </style>
@@ -30,42 +122,123 @@ margin-top:30px;
 
 <body>
 
+<header>
+<div class="container">
+<nav>
+<h2>Jireh Ruiz</h2>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+</div>
+</header>
+
+
+<section class="hero">
 <div class="container">
 
-<h1>Jireh Paul Ruiz</h1>
-<p>Freelancer | Excel Automation | Data Analysis | Print Design</p>
+<h1>Freelancer | Excel Automation & Data Solutions</h1>
 
-<div class="section">
+<p>I help businesses automate reports, analyze data, and improve workflow efficiency.</p>
+
+<a class="btn" href="#contact">Hire Me</a>
+
+</div>
+</section>
+
+
+<section class="section" id="about">
+<div class="container">
+
 <h2>About Me</h2>
-<p>I am a manufacturing and technical professional with experience in
-Excel VBA automation, data analysis, and printing design.</p>
+
+<p style="text-align:center;max-width:700px;margin:auto;">
+I am a technical professional with experience in manufacturing engineering,
+Excel VBA automation, and data analysis. I create tools that improve workflow
+efficiency and reduce manual work for businesses.
+</p>
+
+</div>
+</section>
+
+
+<section class="section" id="services">
+<div class="container">
+
+<h2>Services</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Excel VBA Automation</h3>
+<p>Automate reports, dashboards, and repetitive tasks using VBA.</p>
 </div>
 
-<div class="section">
-<h2>Skills</h2>
-<ul>
-<li>Excel VBA Automation</li>
-<li>Data Analysis</li>
-<li>Printing Design</li>
-<li>Manufacturing Process Control</li>
-</ul>
+<div class="card">
+<h3>Data Analysis</h3>
+<p>Transform raw data into meaningful insights and reports.</p>
 </div>
 
-<div class="section">
+<div class="card">
+<h3>Print & Layout Design</h3>
+<p>Professional layouts for stickers, tarpaulins, and marketing materials.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="section projects" id="projects">
+<div class="container">
+
 <h2>Projects</h2>
-<ul>
-<li>Excel Automated Reporting Tool</li>
-<li>Tarpaulin & Sticker Layout Design</li>
-<li>YouTube Shorts Channel: Tiny Tales & Smiles</li>
-</ul>
+
+<div class="grid">
+
+<div class="card">
+<h3>Automated Excel Reporting Tool</h3>
+<p>Generated automatic daily production reports.</p>
 </div>
 
-<div class="section">
+<div class="card">
+<h3>Sticker Printing Layout System</h3>
+<p>Optimized layout workflow for printing operations.</p>
+</div>
+
+<div class="card">
+<h3>YouTube Shorts Channel</h3>
+<p>Creator of "Tiny Tales & Smiles".</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="section" id="contact">
+<div class="container">
+
 <h2>Contact</h2>
-<p>Email: your@email.com</p>
-</div>
+
+<p style="text-align:center;">
+Email: your@email.com
+</p>
 
 </div>
+</section>
+
+
+<footer>
+<p>© 2026 Jireh Paul Ruiz | Freelancer</p>
+</footer>
 
 </body>
 </html>
